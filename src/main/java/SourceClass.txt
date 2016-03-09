@@ -1,0 +1,50 @@
+
+class Travel {
+    public Ford ford;
+
+    public Opel opel;
+
+    public Travel(Ford aFord) {
+      ford = aFord;
+    }
+
+    public Travel(Opel aOpel) {
+      opel = aOpel;
+    }
+
+    public void doTravel() {
+      if (ford != null) {
+        System.out.println((ford.amortization() * 5 + ford.repair()) * someInnerLogic());
+      }
+
+      if (opel != null) {
+        System.out.println((opel.amortization() * 3 + opel.repair()) * someInnerLogic());
+      }
+    }
+
+
+    private float someInnerLogic() {
+      return new Random().nextFloat() + 1;
+    }
+
+  }
+
+class Ford {
+    public int amortization() {
+      return 5;
+    }
+
+    public int repair() {
+      return 100;
+    }
+  }
+
+  class Opel {
+    public int amortization() {
+      return 10;
+    }
+
+    public int repair() {
+      return 200;
+    }
+  }
